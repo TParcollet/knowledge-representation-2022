@@ -11,19 +11,12 @@ If first in one task, you'll earn a mystery legendary loot. Hence, two winners (
 
 ## Advices
 - Start small, explore the dataset, understand it.
-- Do not blindly apply all the models from `torch_geometric`. Tuning a promising model instead of trying thousands of them will certainly lead you to the top-1. 
+- Still start small: implement a simple GCN **BY YOURSELF**. This will make you confident in moving forward.
+- Do not blindly apply all the models from `torch_geometric`. Tuning a promising model instead of trying thousands of them will certainly lead you to the top-1. Plus, I won't be happy if your code just contain a single GNN from PyTorch-Geometric. I could be happy if you try 10 of then and benchmark them properly (statistics etc ...). 
 - Do not think that a custom model is a bad idea. Models implemented by default in `torch_geometric` are generic. It is most likely that a SotA handcrafted model will end-up being better !
 
 
 |                             | ogbn-arxiv                    | ogbg-mol                    |
 |-----------------------------|-------------------------------|-----------------------------|
-|Louis Aracil                 | 72.07%                        | 72.19%                      |
-|Alexis Sola                  | 70,73%                        | 78.03%                      |
-|Nathan Guilhot               | 70.81%                        | 74.03%                      |
-|Haddad Anas                  | 69.7%                        | 75.11%                      |
-|Abdoulaye Sayouti Souleymane | 71.9%                         | 77.5%                       |
-|Virgile Sucal                | 41.38%                        | 63.65%                      |
-|Nousradine cherif Hassan     | 56.53%                        | 76.41%
-
-
+|Eleanor TroFor                 | 1000.0%                        | 1000.00%                      |
 
