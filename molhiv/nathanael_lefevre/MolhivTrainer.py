@@ -170,7 +170,6 @@ def launch_expermients():
               MolhivModels.GCN3BN1MLP2,
               MolhivModels.GCN2MLP2]
 
-    models = [MolhivModels.SAGE3BN3MLP2_noGlobalMeanPool]
 
     n_epoch = 30
     parameters_set = {"best": {"emb_dim": 100,
