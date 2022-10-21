@@ -149,7 +149,7 @@ def graph_property_prediction():
     dropout = 0.5
     lr = 0.001
     epochs = 70
-    gnn_type = 'sage'
+    gnn_type = 'gen'
 
     # Load the dataset 
     dataset = PygGraphPropPredDataset(name='ogbg-molhiv')
