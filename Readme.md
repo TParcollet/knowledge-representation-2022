@@ -19,4 +19,4 @@ If first in one task, you'll earn a mystery legendary loot. Hence, two winners (
 |                             | ogbn-arxiv                    | ogbg-mol                    |
 |-----------------------------|-------------------------------|-----------------------------|
 |Eleanor TroFor                 | 1000.0%                        | 1000.00%                      |
-
+|Dylan Durand                   | 71.50%                         | 78.30%                        |
