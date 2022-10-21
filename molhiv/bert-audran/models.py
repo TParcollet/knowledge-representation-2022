@@ -53,8 +53,9 @@ class GraphModel(torch.nn.Module):
             x = F.relu(x)
             x = F.dropout(x, p=self.dropout, training=self.training)
         x = self.conv_norm(x)
+        # x est le plongement du graphe (tous les noeuds)
         x = torch_geometric.nn.global_mean_pool(x, batch)
-
+        # x est maintenant un seul embedding
         x = self.mlp(x)
         return F.log_softmax(x, dim=1)
 

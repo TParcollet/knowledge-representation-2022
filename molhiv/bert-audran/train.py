@@ -132,7 +132,7 @@ if not os.path.exists("models"):
     os.mkdir("models")
 
 if task == "node":
-    dataset = PygNodePropPredDataset(name="ogbn-arxiv", transform=torch_geometric.transforms.ToSparseTensor())
+    dataset = PygNodePropPredDataset(name="ogbn-arxiv", transform=torch_geometric.transforms.ToSparseTensor()) # https://pytorch-geometric.readthedocs.io/en/latest/modules/transforms.html#torch_geometric.transforms.ToSparseTensor
     data = dataset[0]
     data.adj_t = data.adj_t.to_symmetric()
     data = data.to(device)

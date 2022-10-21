@@ -13,6 +13,8 @@ Le requirements.txt contient les différents package.
 
 ## Dataset ogbn-arxiv
 
+Ce dataset est un graphe dirigé qui représente les citations dans les articles scientifiques sur l'informatique. Chaque noeud est un article et a un vecteur qui est un embedding du titre et de l'abstract.
+
 Pour ce dataset j'utilise l'evaluateur fourni et j'utilise l'accuracy.
 
 Ci-dessous un tableau regroupant les différents résultats que j'ai obtenu pour cette tache. 
@@ -30,7 +32,13 @@ La dernière colonne permet de savoir en moyenne combien d'epoch il faut faire p
 | GCNConv                    |                   61.96                   |                55.62                |         170 (250 epochs)          |            208             |
 
 Descriptif plus détaillé des modèles:
-- "New": correspond à l'utilisation de "data.adj_t = data.adj_t.to_symmetric()" dans le modèle, sans new cela veut dire utilisation des edges index. Le modèle a aussi un peu changé: n_layers*(conv->norm->relu) -> linear
+- "New": correspond à l'utilisation de "data.adj_t = data.adj_t.to_symmetric()" et de la transformation au départ "dans le modèle, sans new cela veut dire utilisation des edges index. Le modèle a aussi un peu changé: n_layers*(conv->norm->relu) -> linear
 - Les modèles anciens ont la même architecture que pour l'autre dataset
 - La différence entre le SageConv et le GCN conv pourrait être dû à de la chance.
 
+## Sources
+
+https://ogb.stanford.edu/docs/nodeprop/#ogbn-arxiv
+https://pytorch-geometric.readthedocs.io/en/latest/
+https://pytorch-geometric.readthedocs.io/en/latest/modules/transforms.html#torch_geometric.transforms.ToSparseTensor
+https://notebooks.githubusercontent.com/view/ipynb?browser=chrome&color_mode=auto&commit=2ccbce231c5517c65c5bf296aefb099bd63f90a8&device=unknown&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f786965636b31332f6373323234772d77696e7465722d323032312f326363626365323331633535313763363563356266323936616566623039396264363366393061382f4353323234575f436f6c61625f322e6970796e62&logged_in=false&nwo=xieck13%2Fcs224w-winter-2021&path=CS224W_Colab_2.ipynb&platform=android&repository_id=356801771&repository_type=Repository&version=99

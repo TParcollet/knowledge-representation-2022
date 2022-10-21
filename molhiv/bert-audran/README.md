@@ -13,6 +13,8 @@ Le requirements.txt contient les différents package.
 
 ## Dataset ogbg-molhiv
 
+Le but de ce dataset est de prédire les propriétés des molécules (2 classes): soit la molécule inhibe la réplication  du virus du VIH ou non.
+
 Pour ce dataset il est nécessaire d'utiliser la métrique "rocauc" pour la précision, j'utilise donc l'evaluateur foruni.
 
 Ci-dessous un tableau regroupant les différents résultats que j'ai obtenu pour cette tache. 
@@ -33,3 +35,9 @@ Descriptif plus détaillé des modèles:
 - SageConv: Ce modèle utilise les couches SageConv pour la convolution. Encoder de noeud (embedding de taille=100) -> SageConv -> batch norm -> MLP à 2 couches (les autres modèles ont la même forme)
 - GATv2Conv: je sais pas pourquoi les résultats sont si bas, je dois surement mal faire les choses
 - GCNConv: on voit que l'encodeur de noeuds améliore grandement les perfs
+
+## Sources
+
+https://ogb.stanford.edu/docs/graphprop/#ogbg-mol
+https://pytorch-geometric.readthedocs.io/en/latest/
+https://github.com/snap-stanford/ogb/blob/master/ogb/graphproppred/mol_encoder.py
