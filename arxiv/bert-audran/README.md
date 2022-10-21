@@ -17,7 +17,7 @@ Ce dataset est un graphe dirigé qui représente les citations dans les articles
 
 Pour ce dataset j'utilise l'evaluateur fourni et j'utilise l'accuracy.
 
-Ci-dessous un tableau regroupant les différents résultats que j'ai obtenu pour cette tache. 
+Ci-dessous un tableau regroupant les différents résultats que j'ai obtenu pour cette tache.
 Tous les entrainements avaient : 100 epochs, l'optimiseur Adam, un learning rate de 0.01, la nll_loss, log softmax en sortie du modèle. Si pas spécifié : 3 couches de convolutions, 1 couches linéaires avec 25% de dropout et Relu, hidden dim des différentes layers à 128.
 Les résultats sont la moyenne sur 3 entrainements du modèle (pas plus par manque de temps).
 La colonne sur les temps d'entrainements permet de comparer deux modèles et de voir si par exemple pour gagner 2% il faut augmenter le temps de 25%.
@@ -32,7 +32,7 @@ La dernière colonne permet de savoir en moyenne combien d'epoch il faut faire p
 | GCNConv                    |                   61.96                   |                55.62                |         170 (250 epochs)          |            208             |
 
 Descriptif plus détaillé des modèles:
-- "New": correspond à l'utilisation de "data.adj_t = data.adj_t.to_symmetric()" et de la transformation au départ "dans le modèle, sans new cela veut dire utilisation des edges index. Le modèle a aussi un peu changé: n_layers*(conv->norm->relu) -> linear
+- "New": correspond à l'utilisation de "data.adj_t = data.adj_t.to_symmetric()" et de la transformation au départ "torch_geometric.transforms.ToSparseTensor()" dans le modèle, sans new cela veut dire utilisation des edges index. Le modèle a aussi un peu changé: n_layers*(conv->norm->relu) -> linear
 - Les modèles anciens ont la même architecture que pour l'autre dataset
 - La différence entre le SageConv et le GCN conv pourrait être dû à de la chance.
 
