@@ -16,7 +16,7 @@ If first in one task, you'll earn a mystery legendary loot. Hence, two winners (
 - Do not think that a custom model is a bad idea. Models implemented by default in `torch_geometric` are generic. It is most likely that a SotA handcrafted model will end-up being better !
 
 
-|                             | ogbn-arxiv                    | ogbg-mol                    |
-|-----------------------------|-------------------------------|-----------------------------|
-|Eleanor TroFor                 | 1000.0%                        | 1000.00%                      |
-
+|                | ogbn-arxiv | ogbg-mol |
+|----------------|------------|----------|
+| Eleanor TroFor | 1000.0%    | 1000.00% |
+| Audran Bert    | 70.55%     | 79.08%   |
