@@ -11,6 +11,9 @@ import ogb.nodeproppred as node_eval
 import ogb.graphproppred as graph_eval
 import matplotlib.pyplot as plt
 
+nb_train = 5
+epoch = 100
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
@@ -70,7 +73,7 @@ def evaluate(model, loader):
                 y_true.append(batch.y.clone().detach().cpu())
                 out = model(batch)[:, 0]
                 y_pred.append(out.clone().detach().cpu())
-        y_true = torch.cat(y_true, dim=0)
+        y_true = torch.cat(y_true, dim=0)       # merci à Nathanael pour l idee de la liste concatenee
         y_pred = torch.cat(y_pred, dim=0).unsqueeze(1)
         acc = evaluator.eval({'y_true': y_true,
                               'y_pred': y_pred,
@@ -123,7 +126,6 @@ def train(task, epoch, data, len_data, tloader, vloader):
 
 
 task = "node"
-epoch = 100
 
 if not os.path.exists("models"):
     os.mkdir("models")
@@ -150,7 +152,6 @@ elif task == "graph":
 
 print(dataset)
 
-nb_train = 3
 m_test_acc = 0
 m_valid_acc = 0
 m_best_epoch = 0
